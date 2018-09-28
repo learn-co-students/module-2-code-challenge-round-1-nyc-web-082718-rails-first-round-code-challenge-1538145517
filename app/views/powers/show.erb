@@ -1,0 +1,11 @@
+<h2> <%= @power.name %> </h2><br><br>
+
+Effect: <%= @power.description %><br>
+<h3>Notable heroines with this power:</h3>
+<% @power.heroines.each do |heroine| %>
+<p><b> <%= link_to heroine.super_name, heroine_path(heroine) %> </b><br>
+  Alter Ego:<%= heroine.name %><br>
+</p>
+<% end %><br><br>
+
+<%= link_to "Return to Powers Listing", powers_path %> || <%= link_to "Edit #{@power.name}", edit_power_path %>

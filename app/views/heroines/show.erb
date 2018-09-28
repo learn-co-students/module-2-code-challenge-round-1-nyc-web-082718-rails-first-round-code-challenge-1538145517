@@ -1,0 +1,8 @@
+<h1>Show Page</h1>
+<h1> <%= @heroine.super_name %>   </h1>
+<h2> Name: <%= @heroine.name %></h2>
+<h2> Power: <%= link_to @heroine.power.name, power_path(@heroine.power)%></h2>
+<!-- # <%= link_to "home", heroines_path %> |
+# <%= link_to "edit", edit_heroine_path(@heroine) %> |
+# <%= link_to "new", new_heroine_path(@heroine) %> |
+# <%= link_to "delete", heroine_path(@heroine), method: :delete %> -->

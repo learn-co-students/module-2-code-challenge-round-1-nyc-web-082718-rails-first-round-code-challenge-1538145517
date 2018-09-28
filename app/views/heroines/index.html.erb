@@ -1,10 +1,22 @@
 <h2>All Heroines</h2>
 
+<!-- <h3>Search for Super Power</h3>
+<%= form_tag(heroines_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Heroines" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% if @heroines.blank? %>
+  <h4>There are no heroines with the power <%= params[:search] %>.</h4>
+<% end %> -->
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<%= link_to "Create a new heroine!", new_heroine_path %>

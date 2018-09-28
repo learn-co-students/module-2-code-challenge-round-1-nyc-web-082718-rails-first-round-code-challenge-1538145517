@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to "Home", '/' %> | <%= link_to "Heroines", heroines_path %> | <%= link_to "Powers", powers_path %>
+    </nav>
+    <br><br>
+
     <%= yield %>
   </body>
 </html>

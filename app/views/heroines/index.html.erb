@@ -1,10 +1,43 @@
 <h2>All Heroines</h2>
 
+<div id="filter">
+  <%= form_tag(heroines_path, method: :get) do %>
+    <%= label_tag("Filter by:") %><br>
+
+    <%= radio_button_tag(:powers, "super strength") %>
+    <%= label_tag(:powers_super_strength, "Super strength") %><br>
+
+    <%= radio_button_tag(:powers, "flight") %>
+    <%= label_tag(:powers_flght, "Flight") %><br>
+
+    <%= radio_button_tag(:powers, "super human senses") %>
+    <%= label_tag(:powers_super_human_senses, "Superhuman senses") %><br>
+
+    <%= radio_button_tag(:powers, "elasticity") %>
+    <%= label_tag(:powers_elasticity, "Elasticity") %><br>
+
+    <%= submit_tag("Filter") %>
+  <% end %>
+</div>
+
+<% if @q %>
+  <% filtered_heroines = @heroines.select do |h| %>
+    <% h.power.name == @q %>
+  <% end %>
+  <h2>Filtered by "<%= link_to @q, power_path(Power.find_by(name: @q)) %>"</h2>
+  <h3><%= link_to "Clear filter", heroines_path %></h3>
+
+<% else %>
+  <% filtered_heroines = @heroines %>
+<% end %>
+
 <ul>
-  <% @heroines.each do |heroine| %>
+  <% filtered_heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<h3> <%= link_to "New heroine", new_heroine_path %> </h3>

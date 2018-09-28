@@ -1,0 +1,15 @@
+<% if flash[:error] %>
+<% flash[:error].each do |message| %>
+<%= message %>
+<% end %>
+<% end %>
+
+<%= form_for @heroine do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :super_name %>
+<%= f.text_field :super_name %>
+<%= f.label :power_id %>
+<%= f.select :power_id, Power.all.collect { |p| [p.name, p.id] }%>
+<%= f.submit %>
+<% end %>

@@ -1,0 +1,10 @@
+<h2><%= @power.name.titleize %></h2>
+<p><%= @power.description.capitalize + "." %></p>
+<br>
+<h3>Currently used by:</h3>
+<% @power.heroines.each do |h| %>
+  🌐 <%= link_to h.super_name, h %><br>
+<% end %>
+
+<br><br>
+<%= link_to "🌞 Display all heroines 🌞", heroines_path %>

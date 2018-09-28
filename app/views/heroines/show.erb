@@ -1,0 +1,10 @@
+<h2>This heroine</h2>
+
+Name: <%= @heroine.name %><br>
+Super name: <%= @heroine.super_name %><br>
+Power: <%= link_to @heroine.power.name, @heroine.power%><br><br>
+
+<!-- Added edit and delete for extra praction -->
+<!-- # <%= link_to "edit this heroine", edit_heroine_path %><br> -->
+<!-- # <%= link_to "delete this heroine", heroine_path, method: "delete" %><br> -->
+<%= link_to "go back to all heroines", heroines_path %>

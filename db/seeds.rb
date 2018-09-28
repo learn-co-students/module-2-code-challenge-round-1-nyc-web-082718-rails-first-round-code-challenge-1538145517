@@ -1,5 +1,5 @@
-Heroine.destroy_all
-Power.destroy_all
+# Heroine.destroy_all
+# Power.destroy_all
 
 powers = [
   {name:"super strength", description: "gives the wielder super-human strengths" },

@@ -4,7 +4,10 @@
   <% @heroines.each do |heroine| %>
     <li>
       <%= heroine.super_name %>
+      - (real name) <%= link_to heroine.name, heroine %>
     </li>
     <br>
   <% end %>
-</ul>
+</ul><br>
+
+<%=link_to "make a new heroine", new_heroine_path  %>

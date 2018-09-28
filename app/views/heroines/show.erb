@@ -1,0 +1,15 @@
+<h3><%= @heroine.super_name %></h3>
+Name: <%= @heroine.name %></br>
+<h3>Power:</h3>
+<% if @heroine.power %>
+<%= link_to @heroine.power.name.capitalize, power_path(@heroine.power.id) %>
+<% end %>
+</br>
+</br>
+<%= link_to "View All Heroines", heroines_path %> |
+<%= link_to "View All Powers", powers_path %>
+</br>
+</br>
+<!-- BONUS -->
+<!-- # <%= link_to "Edit Heroine", edit_heroine_path %> |
+# <%= link_to "Delete Heroine", @heroine, method: :delete, data: {confirm: "Are you sure?"} %> -->

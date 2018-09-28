@@ -1,0 +1,5 @@
+<h1>Edit  <%= @heroine.super_name %> </h1>
+
+<%= render "form" %><br>
+<%= button_to "Delete", @heroine, method: :get, data: {confirm: "Are you sure?"} %>
+<%= button_to "Cancel", @heroine, method: :get %>

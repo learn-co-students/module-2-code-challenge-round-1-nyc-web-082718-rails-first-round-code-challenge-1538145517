@@ -24,24 +24,25 @@ class HeroinesController < ApplicationController
     end
   end
 
-  def edit
-    @power_options = Power.all.map { |power| [power.name, power.id] }
-  end
-
-  def update
-    @heroine.update(heroine_params)
-    if @heroine.valid?
-      redirect_to @heroine
-    else
-      flash[:errors] = @heroine.errors.full_messages
-      redirect_to edit_heroine_path
-    end
-  end
-
-  def destroy
-    @heroine.destroy
-    redirect_to heroines_path
-  end
+  # BONUS
+  # def edit
+  #   @power_options = Power.all.map { |power| [power.name, power.id] }
+  # end
+  #
+  # def update
+  #   @heroine.update(heroine_params)
+  #   if @heroine.valid?
+  #     redirect_to @heroine
+  #   else
+  #     flash[:errors] = @heroine.errors.full_messages
+  #     redirect_to edit_heroine_path
+  #   end
+  # end
+  #
+  # def destroy
+  #   @heroine.destroy
+  #   redirect_to heroines_path
+  # end
 
   private
   def heroine_params

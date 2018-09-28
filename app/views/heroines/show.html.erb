@@ -1,0 +1,7 @@
+<h1>Heroine Info</h1>
+
+<p>Hero name: <%= @heroine.super_name %></p>
+<p>Secret identity: <%= @heroine.name %></p>
+<p>Power: <%= link_to(@heroine.power.name, power_path(@heroine.power)) %></p>
+
+<%= button_to("Index", heroines_path, method: :get) %>

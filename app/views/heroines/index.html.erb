@@ -1,10 +1,26 @@
 <h2>All Heroines</h2>
 
+
+<h3>Options</h3>
+
+<ul>
+<li> <%= link_to "Heroines with Super Strength", heroines_path(power_id: 1 ) %></li>
+<li> <%= link_to "Heroines Who Fly", heroines_path(power_id: 2 ) %></li>
+<li> <%= link_to "Heroines with Super Human Senses", heroines_path(power_id: 3 ) %></li>
+<li> <%= link_to "Heroines with Elasticity", heroines_path(power_id: 4 ) %></li>
+<li> <%= link_to "All Heroines", heroines_path %></li>
+
+<li> <%= link_to "Make a New Heroine", new_heroine_path %> </li>
+
+</ul>
+
+<h3> Heroines List</h3>
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
-    </li>
+      Super Name: <%= heroine.super_name %>,
+      Name: <%= link_to heroine.name, heroine_path(heroine) %>
+    </li> <br>
     <br>
   <% end %>
 </ul>

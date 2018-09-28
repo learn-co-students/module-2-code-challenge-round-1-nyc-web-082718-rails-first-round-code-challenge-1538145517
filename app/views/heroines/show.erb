@@ -1,0 +1,11 @@
+<h1> Heroine Show Page</h1>
+
+
+<ul>
+
+  <li> <%= @heroine.name %> </li>
+  <li>  <%= @heroine.super_name %></li>
+  <li>  <%= link_to @heroine.power.name, @heroine.power %> </li>
+</ul>
+
+<%= button_to "Delete", heroine_path, method: :delete %>

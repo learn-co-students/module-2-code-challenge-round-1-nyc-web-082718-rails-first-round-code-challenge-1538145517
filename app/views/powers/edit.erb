@@ -1,0 +1,21 @@
+<h1>Edit a Power</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <%= e %><br>
+  <% end %>
+<% end %>
+
+<%= form_for(@power) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.submit %>
+<% end %>
+
+<%= button_to "Delete This Power", @power, method: :delete %>
+<%= button_to "Cancel", power_path, method: :get %>
+
+
+<!-- If given time, I'll make a _form.erb file and render "form" in this and the new file -->

@@ -1,0 +1,9 @@
+<h2><%= @heroine.super_name %></h2>
+<b>Name:</b> <%= @heroine.name %><br>
+<b>Power:</b> <%= link_to @heroine.power.name.capitalize, @heroine.power %>
+<br><br><br>
+
+<%= button_to "⚡️DESTROY⚡️", @heroine, :method => :delete %>
+
+<%= link_to "Edit this heroine 🕹", edit_heroine_path %><br>
+<%= link_to "🌞 Display all heroines 🌞", heroines_path %>

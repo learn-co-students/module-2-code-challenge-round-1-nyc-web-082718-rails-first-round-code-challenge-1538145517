@@ -1,0 +1,17 @@
+<h1>Create a New Super Heroine!</h1>
+
+<% if flash[:error] %>
+  <% flash[:error].each do |e| %>
+    <%= e %>
+  <% end %>
+<% end %>
+
+<ul>
+  <%= form_for @heroine do |f| %>
+  <li>Name: <%= f.text_field :name %></li>
+  <li>Super Name: <%= f.text_field :super_name %></li>
+  <li>Power_id: <%= f.select :power_id, @power_list %></li>
+
+  <li><%= f.submit "Create Super Heroine!" %></li>
+</ul>
+<% end %>

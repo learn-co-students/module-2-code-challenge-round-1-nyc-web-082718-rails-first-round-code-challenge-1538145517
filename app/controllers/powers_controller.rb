@@ -24,25 +24,25 @@ class PowersController < ApplicationController
     end
   end
 
-  def edit
-
-  end
-
-  def update
-    @power.update(power_params)
-    if @power.valid?
-      flash[:notice] = "Power Updated!"
-      redirect_to @power
-    else
-      flash[:error] = @power.errors.full_messages
-      redirect_to edit_power_path
-    end
-  end
-
-  def destroy
-    @power.destroy
-    redirect_to powers_path
-  end
+  # def edit
+  #
+  # end
+  #
+  # def update
+  #   @power.update(power_params)
+  #   if @power.valid?
+  #     flash[:notice] = "Power Updated!"
+  #     redirect_to @power
+  #   else
+  #     flash[:error] = @power.errors.full_messages
+  #     redirect_to edit_power_path
+  #   end
+  # end
+  #
+  # def destroy
+  #   @power.destroy
+  #   redirect_to powers_path
+  # end
 
 private
 

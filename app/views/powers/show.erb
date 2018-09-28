@@ -1,0 +1,5 @@
+<h1><%= @power.name %></h1>
+
+Power Description: <%= @power.description %>
+<%= button_to "Edit This Power", edit_power_path, method: :get %>
+<%= button_to "Power Index", powers_path, method: :get %>

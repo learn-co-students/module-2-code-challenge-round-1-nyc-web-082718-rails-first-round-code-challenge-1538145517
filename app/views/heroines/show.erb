@@ -1,0 +1,9 @@
+<h1><%= @heroine.super_name %></h1>
+
+<ul>
+  <li><%= @heroine.name %></li>
+  <li><%= link_to @heroine.power.name, power_path(@heroine.power) %></li>
+</ul>
+
+<%= button_to "Edit This Heroine", edit_heroine_path, method: :get %>
+<%= button_to "Heroine Index", heroines_path, method: :get %>

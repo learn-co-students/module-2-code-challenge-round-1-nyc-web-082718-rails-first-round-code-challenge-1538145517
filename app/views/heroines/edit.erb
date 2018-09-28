@@ -1,0 +1,20 @@
+<h1>Edit a Heroine</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <%= e %><br>
+  <% end %>
+<% end %>
+
+<%= form_for(@heroine) do |f| %>
+  <%= f.label :super_name %>
+  <%= f.text_field :super_name %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :power %>
+  <%= f.collection_select :power_id, Power.all, :id, :name %>
+  <%= f.submit %>
+<% end %>
+
+<%= button_to "Delete This Heroine", @heroine, method: :delete %>
+<%= button_to "Cancel", heroine_path, method: :get %>
